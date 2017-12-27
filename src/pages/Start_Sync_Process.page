@@ -1,0 +1,34 @@
+<apex:page standardController="MTech_Devices__c" extensions="MultipleDeviceRequestController" recordSetVar="Devices" sidebar="true">
+    <apex:form >
+	<apex:pageblock title="Start Synching Process">
+    <apex:pageBlockSection title="Select Service Request#">
+        <apex:selectList id="SRNumber" multiselect="false" size="1" value="{!SelectedSRNumber}">
+           	<apex:actionSupport event="onclick" action="{!getDevices}" reRender="RelatedDevices"/>
+            <apex:selectOptions value="{!SRList}"></apex:selectOptions>
+            <apex:actionStatus id="DevStatus" startText="Fetching Devices" stopText="Done"></apex:actionStatus>
+        </apex:selectList>
+    </apex:pageBlockSection>
+    <apex:pageBlockButtons >
+    	<apex:commandButton action="{!SyncDevices}" value="Synch">
+        	<!--apex:param name="srNum" value="{!MTech_Devices__c.SR_Number2__c}" assignTo="{!srNumber}"></apex:param-->
+       	</apex:commandButton>
+        <apex:commandButton value="Cancel" action="{!cancel}"/>
+    </apex:pageBlockButtons>
+   	<apex:pageBlockSection id="RelatedDevices" title="Related Unregistered Devices">
+        <apex:pageBlockTable value="{!RelatedDevices}" var="lnkDevice">
+            <apex:column value="{!lnkDevice.Serial_Number__c}"/>
+            <apex:column value="{!lnkDevice.SR_Number2__c}"/>
+            <apex:column value="{!lnkDevice.Device_Type__c}"/>
+            <apex:column value="{!lnkDevice.Device_Description__c}"/>
+            <apex:column value="{!lnkDevice.Device_Color__c}"/>
+            <apex:column value="{!lnkDevice.Warranty_Claim__c}"/>
+            <apex:column value="{!lnkDevice.Registered__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlockSection>
+    <apex:outputpanel id="Status">
+        <apex:outputText title="Test" id="lblSync"></apex:outputText>
+ 	</apex:outputpanel>
+
+    </apex:pageblock>
+    </apex:form>
+</apex:page>
