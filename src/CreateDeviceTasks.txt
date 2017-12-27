@@ -1,0 +1,30 @@
+trigger CreateDeviceTasks on BMCServiceDesk__Incident__c (after insert) {
+//Find Attachment (Excel sheet) for the Service Request
+//Read Excel sheet for each Device#
+//Check if Device Serial# already exists
+//If Device Serial# does not exists, create Device#
+//Create Task, linkit to Service Request & add Device#
+}
+
+Hi Tony,
+Our project started from July 1st 2016 (Initial contract Date). Contract renewed on Aug 2nd. I was not keeping time regularly so I reported Meeting times during August 2016. 
+During September I spent more time on research but I was not keeping time so I had gone thru our email conversations during Sept and logged time for September.
+
+August 2016
+8/11: Submition of Project scope - 2Hrs
+8/16: Meeting to Discuss Inventory and Mobile Device CMDB classes - 1Hr
+8/22: Meeting - 1Hr
+8/29: Meeting - 1Hr
+----------------------------
+Non coding Hours: 5Hrs
+
+September 2016
+9/5: Meeting 7pm to 830pm cst - 1Hr
+9/6 to 9/10: CMDB Asset/CI Research - 2Hrs
+9/11: Meeting - 1Hr
+9/12: Single repair request - 2 Hrs
+9/13 to 9/28: Trigger code - 12Hrs
+9/28: Meeting from 3 to 4pm cst - 1Hr
+-----------------------------------------------
+Non coding Hours (till 9/28) - 7Hrs
+Trigger coding Hours - 12Hrs
