@@ -1,0 +1,4 @@
+Visualforce Page: MassUpdateRFTasks
+Custom Button: Mass Update
+List view: Mass Update RF Tasks
+FieldSet: MassUpdateFieldSet
